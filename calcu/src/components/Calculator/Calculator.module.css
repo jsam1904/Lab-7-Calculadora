@@ -1,0 +1,15 @@
+.calculator {
+  background: #1c1c1e;
+  border-radius: 20px;
+  padding: 20px 20px 24px;
+  width: 336px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 100vw;
+    border-radius: 0;
+    padding: 16px 16px 32px;
+  }
+}

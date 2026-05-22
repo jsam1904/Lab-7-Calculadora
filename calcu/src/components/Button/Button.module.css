@@ -1,0 +1,26 @@
+.btn {
+  border: none;
+  border-radius: 50%;
+  height: 68px;
+  font-size: 26px;
+  font-family: inherit;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.1s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active { filter: brightness(1.4); }
+.number { background: #333333; color: #ffffff; }
+.operator { background: #ff9f0a; color: #ffffff; }
+.action { background: #636366; color: #000000; font-size: 20px; }
+.equals { background: #ff9f0a; color: #ffffff; }
+.wide {
+  width: 100%;
+  border-radius: 34px;
+  justify-content: flex-start;
+  padding-left: 26px;
+}

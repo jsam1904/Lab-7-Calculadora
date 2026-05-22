@@ -1,0 +1,20 @@
+.display {
+  padding: 8px 16px 20px;
+  min-height: 88px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.value {
+  color: #ffffff;
+  font-size: 72px;
+  font-weight: 200;
+  letter-spacing: -3px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.small {
+  font-size: 44px;
+  letter-spacing: -1px;
+}

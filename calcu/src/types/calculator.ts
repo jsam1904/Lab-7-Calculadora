@@ -9,6 +9,7 @@ export type ButtonAction =
   | { kind: 'operator'; op: Operator }
   | { kind: 'equals' }
   | { kind: 'clear' }
+  | { kind: 'backspace' }
 
 export interface ButtonDef {
   label: string

@@ -10,6 +10,7 @@ type Action =
   | { type: 'OPERATOR'; op: Operator }
   | { type: 'EQUALS' }
   | { type: 'CLEAR' }
+  | { type: 'BACKSPACE' }
 
 const initial: CalculatorState = { display: '0', pendingOp: null, pendingValue: null, waitingForOperand: false }
 const errState = (): CalculatorState => ({ ...initial, display: 'ERROR' })
@@ -55,6 +56,11 @@ function reducer(state: CalculatorState, action: Action): CalculatorState {
     case 'OPERATOR': return handleOperator(state, action.op)
     case 'EQUALS': return handleEquals(state)
     case 'CLEAR': return initial
+    case 'BACKSPACE': {
+      if (state.waitingForOperand || state.display === 'ERROR') return state
+      const next = state.display.length > 1 ? state.display.slice(0, -1) : '0'
+      return { ...state, display: next }
+    }
     default: return state
   }
 }
@@ -69,6 +75,7 @@ export function useCalculator() {
     else if (action.kind === 'operator') dispatch({ type: 'OPERATOR', op: action.op })
     else if (action.kind === 'equals') dispatch({ type: 'EQUALS' })
     else if (action.kind === 'clear') dispatch({ type: 'CLEAR' })
+    else if (action.kind === 'backspace') dispatch({ type: 'BACKSPACE' })
   }
 
   return { display: state.display, dispatchAction }

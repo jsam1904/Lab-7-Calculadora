@@ -1,8 +1,8 @@
 import type { ButtonDef } from '../types/calculator'
 
 export const BUTTONS: ButtonDef[] = [
+  { label: '⌫', variant: 'action', action: { kind: 'backspace' } },
   { label: 'AC', variant: 'action', action: { kind: 'clear' } },
-  { label: '+/-', variant: 'action', action: { kind: 'toggle_sign' } },
   { label: '%', variant: 'operator', action: { kind: 'operator', op: '%' } },
   { label: '÷', variant: 'operator', action: { kind: 'operator', op: '/' } },
   { label: '7', variant: 'number', action: { kind: 'digit', value: '7' } },

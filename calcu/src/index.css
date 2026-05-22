@@ -6,11 +6,35 @@
 
 :root {
   color-scheme: dark;
+  --color-bg:        #121212;
+  --color-surface:   #1E1E1E;
+  --color-surface-2: #2D2D2D;
+  --color-primary:   #3B82F6;
+  --color-secondary: #22C55E;
+  --color-text:      #E0E0E0;
+  --color-text-muted:#888888;
+}
+
+.neu-raised {
+  box-shadow: 4px 4px 10px #0a0a0a, -4px -4px 10px #3a3a3a;
+}
+
+.neu-pressed {
+  box-shadow: inset 4px 4px 10px #0a0a0a, inset -4px -4px 10px #3a3a3a;
+}
+
+.neu-inset {
+  box-shadow: inset 3px 3px 6px #0a0a0a, inset -3px -3px 6px #2e2e2e;
 }
 
 body {
-  background: #000000;
+  background: var(--color-bg);
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  background: var(--color-bg);
+  min-height: 100vh;
 }

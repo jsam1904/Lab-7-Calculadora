@@ -146,4 +146,34 @@ describe('useCalculator', () => {
     )
     expect(h.result.current.display).toBe('1')
   })
+
+  it('backspace removes last digit', () => {
+    const h = setup()
+    dispatch(h, { kind: 'digit', value: '1' }, { kind: 'digit', value: '2' }, { kind: 'digit', value: '3' })
+    dispatch(h, { kind: 'backspace' })
+    expect(h.result.current.display).toBe('12')
+  })
+
+  it('backspace on single digit resets to 0', () => {
+    const h = setup()
+    dispatch(h, { kind: 'digit', value: '7' }, { kind: 'backspace' })
+    expect(h.result.current.display).toBe('0')
+  })
+
+  it('backspace does nothing while waiting for operand', () => {
+    const h = setup()
+    dispatch(h, { kind: 'digit', value: '5' }, { kind: 'operator', op: '+' })
+    dispatch(h, { kind: 'backspace' })
+    expect(h.result.current.display).toBe('5')
+  })
+
+  it('backspace does nothing on ERROR', () => {
+    const h = setup()
+    dispatch(h,
+      { kind: 'digit', value: '3' }, { kind: 'operator', op: '-' },
+      { kind: 'digit', value: '9' }, { kind: 'equals' },
+    )
+    dispatch(h, { kind: 'backspace' })
+    expect(h.result.current.display).toBe('ERROR')
+  })
 })

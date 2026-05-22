@@ -46,8 +46,8 @@ Lab-7-Calculadora/
 
 ```bash
 cd calcu
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Luego abrir [http://localhost:5173](http://localhost:5173) en el navegador.

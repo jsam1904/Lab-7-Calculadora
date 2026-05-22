@@ -12,24 +12,25 @@ Calculadora web desarrollada con React 19, TypeScript y Vite. Incluye pruebas un
 | Vitest | 4 | Pruebas unitarias |
 | Testing Library | 16 | Pruebas de componentes |
 | Storybook | 8 | Documentación visual |
+| Bun | 1.3 | Package manager y runtime |
 
 ## Instalación
 
 ```bash
-npm install
+bun install
 ```
 
 ## Scripts disponibles
 
 ```bash
-npm run dev           # Inicia el servidor de desarrollo en localhost:5173
-npm run build         # Compila TypeScript y genera el build de producción
-npm run preview       # Sirve el build de producción localmente
-npm run lint          # Corre ESLint sobre todo el proyecto
-npm run test          # Corre las pruebas una vez
-npm run test:watch    # Corre las pruebas en modo watch
-npm run test:coverage # Genera reporte de cobertura
-npm run storybook     # Inicia Storybook en localhost:6006
+bun run dev           # Inicia el servidor de desarrollo en localhost:5173
+bun run build         # Compila TypeScript y genera el build de producción
+bun run preview       # Sirve el build de producción localmente
+bun run lint          # Corre ESLint sobre todo el proyecto
+bun run test          # Corre las pruebas una vez
+bun run test:watch    # Corre las pruebas en modo watch
+bun run test:coverage # Genera reporte de cobertura
+bun run storybook     # Inicia Storybook en localhost:6006
 ```
 
 ## Arquitectura
@@ -64,8 +65,8 @@ src/
 
 ## Pruebas
 
-Las pruebas cubren las tres capas de lógica pura:
+44 pruebas cubren las tres capas de lógica pura:
 
-- `calculate.test.ts` — función aritmética
-- `format.test.ts` — formateo de resultados
-- `useCalculator.test.tsx` — comportamiento del reducer vía hook
+- `calculate.test.ts` — función aritmética (12 tests)
+- `format.test.ts` — formateo de resultados (10 tests)
+- `useCalculator.test.tsx` — comportamiento del reducer vía hook (22 tests)
